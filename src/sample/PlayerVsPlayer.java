@@ -6,6 +6,9 @@ import javafx.animation.Timeline;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -19,6 +22,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PlayerVsPlayer {
     private boolean playable = true;
@@ -59,6 +63,13 @@ public class PlayerVsPlayer {
             if(combo.isComplete()) {
                 playable = false;
                 playWinAnimation(combo);
+                PopupController popupController = new PopupController();
+                try {
+                    popupController.openPopupWindow();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 break;
             }
         }
@@ -119,6 +130,7 @@ public class PlayerVsPlayer {
                     turnX=true;
                     checkState();
                 }
+
             });
         };
         public double getCenterX(){
@@ -136,5 +148,7 @@ public class PlayerVsPlayer {
         private void drawO(){
             text.setText("O");
         }
+
+
     }
 }

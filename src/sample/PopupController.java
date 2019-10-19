@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,8 +25,8 @@ public class PopupController implements Initializable {
 
     }
     public void close(){
-        popupStage = (Stage) noButton.getScene().getWindow();
-        popupStage.close();
+        Platform.exit();
+        System.exit(0);
     }
     public void openPlayerVsPlayerWindowAgain(){
         MainWindowController mainWindowController = new MainWindowController();
