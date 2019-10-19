@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
@@ -15,6 +16,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +63,8 @@ public class PlayerVsPlayer {
             }
         }
     }
-    private void playWinAnimation(Combo combo){
+
+    private void playWinAnimation(Combo combo) {
         Line line = new Line();
         line.setStartX(combo.tiles[0].getCenterX());
         line.setStartY(combo.tiles[0].getCenterY());
@@ -76,6 +79,8 @@ public class PlayerVsPlayer {
                 new KeyValue(line.endYProperty(), combo.tiles[2].getCenterY())));
         timeline.play();
     }
+
+
     private class Combo {
         private Tile[] tiles;
         public Combo(Tile...tiles) {

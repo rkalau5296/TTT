@@ -37,6 +37,7 @@ public class MainWindowController implements Initializable {
         stage = new Stage();
         stage.setScene(new Scene(playerVsPlayer.createContent()));
         stage.setTitle("Player vs Player");
+        stage.setOnCloseRequest(event->{MainWindowController.closeProgram();});
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.show();
@@ -52,4 +53,7 @@ public class MainWindowController implements Initializable {
         stage.setScene(new Scene(loader.load()));
         stage.show();
     }
+
+
+
 }

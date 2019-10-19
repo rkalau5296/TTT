@@ -8,17 +8,17 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainWindowController">
    <children>
-      <Button fx:id="button2PC" mnemonicParsing="false" prefHeight="168.0" prefWidth="298.0" text="Player vs Computer" StackPane.alignment="CENTER_RIGHT" onAction="#openPlayerVsComputerWindow">
+      <Button fx:id="button2PC" mnemonicParsing="false" onAction="#openPlayerVsComputerWindow" prefHeight="168.0" prefWidth="298.0" text="Player vs Computer" StackPane.alignment="CENTER_RIGHT">
          <StackPane.margin>
             <Insets />
          </StackPane.margin>
       </Button>
-      <Button fx:id="button1PP" mnemonicParsing="false" prefHeight="168.0" prefWidth="300.0" text="Player vs. Player" StackPane.alignment="CENTER_LEFT" onAction="#openPlayerVsPlayerWindow">
+      <Button fx:id="button1PP" mnemonicParsing="false" onAction="#openPlayerVsPlayerWindow" prefHeight="168.0" prefWidth="300.0" text="Player vs. Player" StackPane.alignment="CENTER_LEFT">
          <StackPane.margin>
             <Insets />
          </StackPane.margin>
       </Button>
-      <Label prefHeight="59.0" prefWidth="590.0" text="Welcome to Tic Tac Toe game. Choose your opponent." textFill="#3a854a" StackPane.alignment="BOTTOM_CENTER" >
+      <Label prefHeight="59.0" prefWidth="590.0" text="Welcome to Tic Tac Toe game. Choose your opponent." textFill="#1b11d7" StackPane.alignment="BOTTOM_CENTER">
          <font>
             <Font name="Arial Italic" size="20.0" />
          </font></Label>
