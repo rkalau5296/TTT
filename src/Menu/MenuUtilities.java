@@ -22,7 +22,13 @@ public class MenuUtilities {
         playerVsPlayer.setGraphic(new ImageView("Images/pvp.jpg"));
         playerVsComputer.setGraphic(new ImageView("Images/pvc.jpg"));
 
-        playerVsPlayer.setOnAction( event -> new MainWindowController().openPlayerVsPlayerWindow());
+        playerVsPlayer.setOnAction( event -> {
+            try {
+                new MainWindowController().openPlayerVsPlayerWindow();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         playerVsComputer.setOnAction( event -> {
             try {
                 new MainWindowController().openPlayerVsComputerWindow();

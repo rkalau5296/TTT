@@ -28,7 +28,7 @@ public class PopupController implements Initializable {
         Platform.exit();
         System.exit(0);
     }
-    public void openPlayerVsPlayerWindowAgain(){
+    public void openPlayerVsPlayerWindowAgain() throws IOException {
         MainWindowController mainWindowController = new MainWindowController();
         mainWindowController.openPlayerVsPlayerWindow();
     }

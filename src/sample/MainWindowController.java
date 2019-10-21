@@ -32,7 +32,7 @@ public class MainWindowController implements Initializable {
         System.exit(0);
     }
 
-    public void openPlayerVsPlayerWindow() {
+    public void openPlayerVsPlayerWindow() throws IOException {
 
         stage = new Stage();
         stage.setScene(new Scene(playerVsPlayer.createContent()));
@@ -45,7 +45,7 @@ public class MainWindowController implements Initializable {
 
     public void openPlayerVsComputerWindow() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("mainWindow.fxml"));
+        loader.setLocation(getClass().getResource("frame.fxml"));
         stage = new Stage();
         stage.setTitle("Okno 1");
         stage.setResizable(false);
