@@ -19,7 +19,6 @@ public class MainWindowController implements Initializable {
 
     @FXML
     Button button1PP, button2PC;
-    PlayerVsPlayer playerVsPlayer = new PlayerVsPlayer();
 
     @Override
     public void initialize(URL location, ResourceBundle resource) {
@@ -33,24 +32,24 @@ public class MainWindowController implements Initializable {
     }
 
     public void openPlayerVsPlayerWindow() throws IOException {
-
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("frame.fxml"));
         stage = new Stage();
-        stage.setScene(new Scene(playerVsPlayer.createContent()));
+        stage.setTitle("Tic Tac Toe Player vs Player");
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
+
+    }
+
+    public void openPlayerVsComputerWindow() throws IOException {
+        stage = new Stage();
+        //stage.setScene(new Scene(playerVsPlayer.createContent()));
         stage.setTitle("Player vs Player");
         stage.setOnCloseRequest(event->{MainWindowController.closeProgram();});
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.show();
-    }
-
-    public void openPlayerVsComputerWindow() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("frame.fxml"));
-        stage = new Stage();
-        stage.setTitle("Okno 1");
-        stage.setResizable(false);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(loader.load()));
         stage.show();
     }
 
