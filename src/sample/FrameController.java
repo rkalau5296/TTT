@@ -17,22 +17,18 @@ import java.util.ResourceBundle;
 
 public class FrameController extends Component implements Initializable {
 
-    Stage stage;
+    public javafx.scene.control.Label label;
     private String whoseTurn = "X";
     private String playerOne = "Player One";
     private String playerTwo = "Player Two";
-    int playerOneCounter = 0;
-    int playerTwoCounter = 0;
-    String whomTurn="";
+    private int playerOneCounter = 0;
+    private int playerTwoCounter = 0;
 
     @FXML
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9;
 
-    public Label label1;
-
     @Override
     public void initialize(URL location, ResourceBundle resource) {
-       //setResult();
         getNames();
     }
 
@@ -43,15 +39,17 @@ public class FrameController extends Component implements Initializable {
 //        dialog.setContentText("Please enter your name:");
 //    }
 
-    public void setResult() {
+    private void setResult() {
 
+        String whomTurn = "";
         if (whoseTurn.equals("X"))
         {
             whomTurn = playerOne;
         } else {
             whomTurn = playerTwo;
         }
-        label1.setText(playerOne + "'s Score is : " + playerOneCounter + "\t    " + whomTurn + "'s move" + playerTwo + "'s Score is : " + playerTwoCounter);
+        label.setText(playerOne + "'s Score is : " + playerOneCounter + "\t" + whomTurn + "'s move" +
+                        "\t" + playerTwo + "'s Score is : " + playerTwoCounter);
     }
     private void getNames(){
         playerOne = JOptionPane.showInputDialog(this,
@@ -70,7 +68,7 @@ public class FrameController extends Component implements Initializable {
         }
     }
     private void determineWhoseTurn(){
-        if( whoseTurn == "X"){
+        if(whoseTurn.equals("X")){
             whoseTurn = "O";
         } else whoseTurn = "X";
     }
@@ -83,42 +81,43 @@ public class FrameController extends Component implements Initializable {
         button.setFont(Font.font ("Verdana bold", 80));
 
     }
-
+//    private void displayPlayerOneWinningMessage(){
+//        JOptionPane.showMessageDialog(this,
+//                playerOne + " is winner.",
+//                "WINNER!",
+//                JOptionPane.INFORMATION_MESSAGE
+//                );
+//        playerOneCounter++;
+//        resetGame();
+//
+//    }
+//    private void displayPlayerTwoWinningMessage(){
+//        JOptionPane.showMessageDialog(this,
+//                playerTwo + " is winner.",
+//                "WINNER!",
+//                JOptionPane.INFORMATION_MESSAGE
+//        );
+//        playerTwoCounter++;
+//        resetGame();
+//    }
     private void displayPlayerOneWinningMessage(){
-        JOptionPane.showMessageDialog(this,
-                playerOne + "Player one won",
-                "WINNER!",
-                JOptionPane.INFORMATION_MESSAGE
-                );
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("WINNER!");
+        alert.setContentText(playerOne + " is winner.");
+        alert.setHeaderText("Congratulation!");
+        alert.show();
         playerOneCounter++;
         resetGame();
-
     }
     private void displayPlayerTwoWinningMessage(){
-        JOptionPane.showMessageDialog(this,
-                playerTwo + "Player two won",
-                "WINNER!",
-                JOptionPane.INFORMATION_MESSAGE
-        );
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("WINNER!");
+        alert.setContentText(playerTwo + " is winner.");
+        alert.setHeaderText("Congratulation!");
+        alert.show();
         playerTwoCounter++;
         resetGame();
     }
-//    private void displayPlayerOneWinningMessage(){
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle("WINNER!");
-//        alert.setContentText("Player one won");
-//        alert.setHeaderText("Hurra!");
-//        alert.show();
-//        resetGame();
-//    }
-//    private void displayPlayerTwoWinningMessage(){
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle("WINNER!");
-//        alert.setContentText("Player two won");
-//        alert.setHeaderText("Hurra!");
-//        alert.show();
-//        resetGame();
-//    }
     private void resetGame(){
         button1.setText("");
         button2.setText("");
@@ -130,7 +129,7 @@ public class FrameController extends Component implements Initializable {
         button8.setText("");
         button9.setText("");
     }
-    public void determineWhoWon(){
+    private void determineWhoWon(){
         String one = button1.getText();
         String two = button2.getText();
         String three = button3.getText();
@@ -193,6 +192,7 @@ public class FrameController extends Component implements Initializable {
     public void button1ActionPerformed(){
         button1.setText(whoseTurn);
         setColourAndFont(button1);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
@@ -201,13 +201,16 @@ public class FrameController extends Component implements Initializable {
     public void button2ActionPerformed(){
         button2.setText(whoseTurn);
         setColourAndFont(button2);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
+
     }
     public void button3ActionPerformed(){
         button3.setText(whoseTurn);
         setColourAndFont(button3);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
@@ -215,6 +218,7 @@ public class FrameController extends Component implements Initializable {
     public void button4ActionPerformed(){
         button4.setText(whoseTurn);
         setColourAndFont(button4);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
@@ -222,6 +226,7 @@ public class FrameController extends Component implements Initializable {
     public void button5ActionPerformed(){
         button5.setText(whoseTurn);
         setColourAndFont(button5);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
@@ -229,6 +234,7 @@ public class FrameController extends Component implements Initializable {
     public void button6ActionPerformed(){
         button6.setText(whoseTurn);
         setColourAndFont(button6);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
@@ -236,6 +242,7 @@ public class FrameController extends Component implements Initializable {
     public void button7ActionPerformed(){
         button7.setText(whoseTurn);
         setColourAndFont(button7);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
@@ -243,6 +250,7 @@ public class FrameController extends Component implements Initializable {
     public void button8ActionPerformed(){
         button8.setText(whoseTurn);
         setColourAndFont(button8);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
@@ -250,11 +258,11 @@ public class FrameController extends Component implements Initializable {
     public void button9ActionPerformed(){
         button9.setText(whoseTurn);
         setColourAndFont(button9);
+        setResult();
         determineWhoseTurn();
         determineWhoWon();
         draw();
     }
-
     private void draw(){
         String one = button1.getText();
         String two = button2.getText();
@@ -269,11 +277,16 @@ public class FrameController extends Component implements Initializable {
                 &&!four.equals("")&&!five.equals("")&&!six.equals("")
                 &&!seven.equals("")&&!eight.equals("")&&!nine.equals(""))
         {
-            JOptionPane.showMessageDialog(this,
-                    "Draw, tie",
-                    "Draw, tie game",
-                    JOptionPane.INFORMATION_MESSAGE
-            );
+//            JOptionPane.showMessageDialog(this,
+//                    "Draw, tie",
+//                    "Draw, tie game",
+//                    JOptionPane.INFORMATION_MESSAGE
+//            );
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Draw, tie");
+            alert.setContentText("Draw, tie game");
+            alert.setHeaderText("Draw, tie game");
+            alert.show();
         }
 
     }

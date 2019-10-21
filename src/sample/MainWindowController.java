@@ -36,7 +36,7 @@ public class MainWindowController implements Initializable {
         loader.setLocation(getClass().getResource("frame.fxml"));
         stage = new Stage();
         stage.setTitle("Tic Tac Toe Player vs Player");
-        stage.setResizable(false);
+        //stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(new Scene(loader.load()));
         stage.show();
