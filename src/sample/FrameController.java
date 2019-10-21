@@ -190,78 +190,159 @@ public class FrameController extends Component implements Initializable {
 
     }
     public void button1ActionPerformed(){
-        button1.setText(whoseTurn);
-        setColourAndFont(button1);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
-        //setResult();
-    }
-    public void button2ActionPerformed(){
-        button2.setText(whoseTurn);
-        setColourAndFont(button2);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button1.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+
+            button1.setText(whoseTurn);
+            setColourAndFont(button1);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
 
     }
+    public void button2ActionPerformed(){
+        boolean isEmpty = button2.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button2.setText(whoseTurn);
+            setColourAndFont(button2);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
+    }
     public void button3ActionPerformed(){
-        button3.setText(whoseTurn);
-        setColourAndFont(button3);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button3.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button3.setText(whoseTurn);
+            setColourAndFont(button3);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
     }
     public void button4ActionPerformed(){
-        button4.setText(whoseTurn);
-        setColourAndFont(button4);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button4.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button4.setText(whoseTurn);
+            setColourAndFont(button4);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
     }
     public void button5ActionPerformed(){
-        button5.setText(whoseTurn);
-        setColourAndFont(button5);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button5.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button5.setText(whoseTurn);
+            setColourAndFont(button5);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
     }
     public void button6ActionPerformed(){
-        button6.setText(whoseTurn);
-        setColourAndFont(button6);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button6.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button6.setText(whoseTurn);
+            setColourAndFont(button6);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
     }
     public void button7ActionPerformed(){
-        button7.setText(whoseTurn);
-        setColourAndFont(button7);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button7.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button7.setText(whoseTurn);
+            setColourAndFont(button7);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
     }
     public void button8ActionPerformed(){
-        button8.setText(whoseTurn);
-        setColourAndFont(button8);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button8.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button8.setText(whoseTurn);
+            setColourAndFont(button8);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
     }
     public void button9ActionPerformed(){
-        button9.setText(whoseTurn);
-        setColourAndFont(button9);
-        setResult();
-        determineWhoseTurn();
-        determineWhoWon();
-        draw();
+        boolean isEmpty = button9.getText().isEmpty();
+        if (!isEmpty){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setContentText("The field is clicked.");
+            alert.setHeaderText("Choose another button");
+            alert.show();
+        }else {
+            button9.setText(whoseTurn);
+            setColourAndFont(button9);
+            setResult();
+            determineWhoseTurn();
+            determineWhoWon();
+            draw();
+        }
     }
     private void draw(){
         String one = button1.getText();
@@ -290,4 +371,5 @@ public class FrameController extends Component implements Initializable {
         }
 
     }
+
 }
