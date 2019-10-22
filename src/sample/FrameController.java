@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import jdk.nashorn.internal.scripts.JO;
-
+import javafx.scene.control.Label;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class FrameController extends Component implements Initializable {
 
-    public javafx.scene.control.Label label;
+
     private String whoseTurn = "X";
     private String playerOne = "Player One";
     private String playerTwo = "Player Two";
@@ -26,6 +26,8 @@ public class FrameController extends Component implements Initializable {
 
     @FXML
     Button button1, button2, button3, button4, button5, button6, button7, button8, button9;
+    @FXML
+    Label label;
 
     @Override
     public void initialize(URL location, ResourceBundle resource) {
@@ -368,6 +370,7 @@ public class FrameController extends Component implements Initializable {
             alert.setContentText("Draw, tie game");
             alert.setHeaderText("Draw, tie game");
             alert.show();
+            resetGame();
         }
 
     }
